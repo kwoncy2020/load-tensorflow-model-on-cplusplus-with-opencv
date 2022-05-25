@@ -1,11 +1,11 @@
 # load-tensorflow-model-on-cplusplus-with-opencv   
-load tensorflow model saved from the way of saved_model on python to c++ with opencv    
+##load tensorflow model saved from the way of saved_model on python to c++ with opencv    
 
-for someone who look for a way to bring the model made by python-tensorflow to c++.   
-this will use tensorflow-c-api and opencv on c++.   
+##for someone who look for a way to bring the model made by python-tensorflow to c++.   
+##this will use tensorflow-c-api and opencv on c++.   
 
-before use this file, you need to install tensorflow, tensorflow-c-api and opencv in your system and you alse need to configure your project by add dll, lib, etc.   
-after finishing settings, include files(LoadDeepModel_tf.cpp, LoadDeepModel_tf.h) to your project.   
+##before use this file, you need to install tensorflow, tensorflow-c-api and opencv in your system and you alse need to configure your project by add dll, lib, etc.   
+##after finishing settings, include files(LoadDeepModel_tf.cpp, LoadDeepModel_tf.h) to your project.   
 
 
 * notice!    
