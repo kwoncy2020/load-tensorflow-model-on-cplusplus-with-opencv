@@ -67,7 +67,7 @@ now you can include files(LoadDeepModel.cpp, LoadDeepModel.h) to your main file.
 
 you can make instance with constructor which requires four args that you already checked.   
 
-// in my case this will be LoadDeepModel LoadDeepModel(R"C:\saved_model\mymodel", "serving_default_input_1", "StatefulPartitionedCall", "serve");   
+// in my case this will be LoadDeepModel LoadDeepModel(R"(C:\saved_model\mymodel)", "serving_default_input_1", "StatefulPartitionedCall", "serve");   
 >LoadDeepModel LoadDeepModel(SAVED_MODEL_PATH, MODEL_INPUT_SIGNATURE, MODEL_OUTPUT_SIGNATURE, MODEL_TAG_NAME);
 
 //you can check weather it loaded or not by below way. if its successful, it will return TF_OK   
