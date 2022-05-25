@@ -74,10 +74,7 @@ if (TF_GetCode(LoadDeepModel.status) != TF_OK)
  cv::waitKey(0);
  cv::destroyAllWindows();
  
- 
- 
- 
- 
+***
  ![1](https://user-images.githubusercontent.com/96859911/170189820-5698076d-1a07-44cc-a207-c41b2bc8532a.png)
 
  
