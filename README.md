@@ -26,15 +26,14 @@ four arguments are required for load saved_model saved by keras api  (the path o
 you can find it from using saved_model_cli. you need to find the way of using saved_model_cli.     
 
 ex) C:\saved_model_cli show --dir {saved_model_folder\my_model_forder}  
-> ==> return tag-sets: 'serve' ( you need to check if it 'serve' or not. if not, using that name)   
+> ==> tag-sets: 'serve' ( you need to check if it 'serve' or not. if not, using that name)   
 
 ex) C:\saved_model_cli show --dir {saved_model_folder\my_model_forder} --tag_set serve  
-> ==> return SignatureDef key: "__saved_model_init_op"
+> ==> SignatureDef key: "__saved_model_init_op"
                    SignatureDef key: "serving_default"   
 
 ex) C:\saved_model_cli shiw --dir {saved_model_folder\my_model_forder} --tag_set serve --signature_def serving_default 
 
-> ==> return some info. see below.   
 > The given SavedModel SignatureDef contains the following output(s):   
       inputs['input_1'] tensor_info:   
           dtype: DT_FLOAT   
@@ -48,7 +47,7 @@ ex) C:\saved_model_cli shiw --dir {saved_model_folder\my_model_forder} --tag_set
   		Method name is : tensorflow/serving/predict   
  
 you can see like this. in this case, next four arguments are requred.   
-  mymodel-forder-path  ( * not the model saved by the way of h5. the folder should contain the model saved by the way of saved_model )    
+>  mymodel-forder-path  ( * not the model saved by the way of h5. the folder should contain the model saved by the way of saved_model )    
   serving_default_input_1  ( you can see this on the name of inputs['input 1'] tensor_info )   
   StatefulPartitionedCall  ( you can see this on the name of outputs['conv2d 10'] tensor_info )   
   serve ( you can see this on tag-sets)   
