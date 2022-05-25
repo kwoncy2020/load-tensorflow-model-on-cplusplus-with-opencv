@@ -20,9 +20,13 @@ after finishing settings, include files(LoadDeepModel_tf.cpp, LoadDeepModel_tf.h
 
 
 if you have a proper model, you need to extract some informations about your model through saved_model_cli.   
+
 four arguments are required for load saved_model saved by keras api  (the path of saved_model, the input name of signature_def, the output name of signature_def and tag name).   
+
 you can find it from using saved_model_cli. you need to find the way of using saved_model_cli.     
+
 ex) C:\saved_model_cli show --dir {saved_model_folder\my_model_forder}  ==> return tag-sets: 'serve' ( you need to check if it 'serve' or not. if not, using that name)   
+
 ex) C:\saved_model_cli show --dir {saved_model_folder\my_model_forder} --tag_set serve  ==> return SignatureDef key: "__saved_model_init_op"
                                                                                                     SignatureDef key: "serving_default"   
 ex) C:\saved_model_cli shiw --dir {saved_model_folder\my_model_forder} --tag_set serve --signature_def serving_default ==> return some info. see below.   
