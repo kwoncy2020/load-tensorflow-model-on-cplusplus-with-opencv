@@ -15,7 +15,7 @@ after finishing settings, include files(LoadDeepModel_tf.cpp, LoadDeepModel_tf.h
 
 \*notice!    
 \*you cannot use model saved by 'h5'. if you have a model like this('xxxxx.h5'), then you need to save your model through the way of saved_model.   
-\*when you have model saved by the way of saved_model, the folder might seem like below.   
+\*when you have a model saved by the way of saved_model, the folder might seem like below.   
 * saved_model  
   * mymodel   
      * assets   
