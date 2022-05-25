@@ -70,9 +70,9 @@ if (TF_GetCode(LoadDeepModel.status) != TF_OK)
  
  cv::Mat out = LoadDeepModel.getResizedImageWithMask(mat, predicted, 2);  // 2 means scale-factor. you can use 2,4,8 scale.
  
- cv::imshow("pred", out);    // if its successful, you can see a red area of segmented by model.
- cv::waitKey(0);
- cv::destroyAllWindows();
+ cv::imshow("pred", out);    // if its successful, you can see a red area of segmented by model.   
+ cv::waitKey(0);   
+ cv::destroyAllWindows();   
  
 ***
  ![1](https://user-images.githubusercontent.com/96859911/170189820-5698076d-1a07-44cc-a207-c41b2bc8532a.png)
