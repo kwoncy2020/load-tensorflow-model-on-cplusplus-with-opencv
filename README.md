@@ -73,7 +73,7 @@ you can make instance with constructor which requires four args that you already
 //you can check weather it loaded or not by below way. if its successful, it will return TF_OK   
 >if (TF_GetCode(LoadDeepModel.status) != TF_OK) return -1;   
 
-// now you can prepare image and put it into .predict() method.
+// now you can prepare an image and put it into .predict() method.
 > cv::Mat mat;   
  mat = cv::imread(R"(C:\picture\0.png)", cv::IMREAD_COLOR);   
  
