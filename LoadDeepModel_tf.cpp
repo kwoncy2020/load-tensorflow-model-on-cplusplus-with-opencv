@@ -79,7 +79,7 @@ cv::Mat LoadDeepModel::predict(cv::Mat* mat, float threshold)
 	
 	auto* output_tensor = static_cast<std::array<float, 1> *>(TF_TensorData(output_values[0]));
 
-	cv::Mat output(cv::Size(matCopied.rows, matCopied.cols), CV_32FC1, output_tensor->data());
+	cv::Mat output(cv::Size(matCopied.cols, matCopied.rows), CV_32FC1, output_tensor->data());
 	cv::Mat output2(output.rows, output.cols, CV_8UC1);
 
 	for (int h = 0; h < output.rows; ++h)
@@ -107,9 +107,6 @@ cv::Mat LoadDeepModel::getResizedImageWithMask(cv::Mat palette, cv::Mat mask, in
 		return palette;
 	}
 	cv::Mat pal = palette.clone();
-	cv::imshow("pred", pal);
-	cv::waitKey(0);
-	cv::destroyAllWindows();
 
 	int scaleR = scaleRate;
 	if (scaleR <= 0 || scaleR % 2 != 0 || scaleR >8) scaleR = 2;
