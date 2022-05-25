@@ -11,12 +11,12 @@ after finishing settings, include files(LoadDeepModel_tf.cpp, LoadDeepModel_tf.h
 * notice! 
 * you cannot use model saved by 'h5'. if you have a model like this('xxxxx.h5'), then you need to save your model through the way of saved_model.
 * when you have model saved by the way of saved_model, the folder might seem like below.
-* -saved_model
-*   -mymodel
-*     -assets
-*     -variables
-*     -keras_metadata.pb
-*     -saved_model.pb
+ -saved_model
+   -mymodel
+     -assets
+     -variables
+     -keras_metadata.pb
+     -saved_model.pb
 
 
 if you have a proper model, you need to extract some informations about your model through saved_model_cli.
@@ -73,6 +73,10 @@ if (TF_GetCode(LoadDeepModel.status) != TF_OK)
  cv::imshow("pred", out);    // if its successful, you can see a red area of segmented by model.
  cv::waitKey(0);
  cv::destroyAllWindows();
+ 
+ 
+ 
+ 
  
  ![1](https://user-images.githubusercontent.com/96859911/170189820-5698076d-1a07-44cc-a207-c41b2bc8532a.png)
 
