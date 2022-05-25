@@ -2,7 +2,7 @@
 load tensorflow model saved from the way of saved_model on python to c++ with opencv    
 
 for someone who look for a way to bring the model made by python-tensorflow to c++. Hopefully, this may help someone who spend tons of time for search the way of use tensorflow-c-api with 2d convolution model under the poor infomations on online. I tested this only on windows 10, c++14, visual studio 2022 in mfc project.
-if there something goes wrong, but still you can get some insight through my code. cheers!
+if there something goes wrong, but still you can get some insights through my code. cheers!
 
 this will use tensorflow-c-api and opencv on c++.   
 
