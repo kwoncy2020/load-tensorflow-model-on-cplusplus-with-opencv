@@ -68,26 +68,26 @@ now you can include files(LoadDeepModel.cpp, LoadDeepModel.h) to your main file.
 you can make instance with constructor which requires four args that you already checked.   
 
 // in my case this will be LoadDeepModel LoadDeepModel(R"C:\saved_model\mymodel", "serving_default_input_1", "StatefulPartitionedCall", "serve");   
-LoadDeepModel LoadDeepModel(SAVED_MODEL_PATH, MODEL_INPUT_SIGNATURE, MODEL_OUTPUT_SIGNATURE, MODEL_TAG_NAME);
+>LoadDeepModel LoadDeepModel(SAVED_MODEL_PATH, MODEL_INPUT_SIGNATURE, MODEL_OUTPUT_SIGNATURE, MODEL_TAG_NAME);
 
-//you can check weather loaded or not by below way. if its successful, it will return TF_OK   
-if (TF_GetCode(LoadDeepModel.status) != TF_OK)   
-  return -1;   
-    
- cv::Mat mat;   
+//you can check weather it loaded or not by below way. if its successful, it will return TF_OK   
+>if (TF_GetCode(LoadDeepModel.status) != TF_OK) return -1;   
+
+// now you can prepare image and put it into .predict() method.
+> cv::Mat mat;   
  mat = cv::imread(R"(C:\picture\0.png)", cv::IMREAD_COLOR);   
  
- cv::Mat mat_gray;
+> cv::Mat mat_gray;
  cv::cvtColor(mat, mat_gray, cv::COLOR_BGR2GRAY);
  
- cv::Mat matForPredict;
+> cv::Mat matForPredict;
  mat_gray.convertTo(matForPredict, CV_32FC1);
  
- cv::Mat predicted = LoadDeepModel.predict(&matForPredict, 0.5);  // 0.5 means threshold. the predicted type is 8UC1.
+> cv::Mat predicted = LoadDeepModel.predict(&matForPredict, 0.5);  // 0.5 means threshold. the predicted type is 8UC1.
  
- cv::Mat out = LoadDeepModel.getResizedImageWithMask(mat, predicted, 2);  // 2 means scale-factor. you can use 2,4,8 scale.
+> cv::Mat out = LoadDeepModel.getResizedImageWithMask(mat, predicted, 2);  // 2 means scale-factor. you can use 2,4,8 scale.
  
- cv::imshow("pred", out);    // if its successful, you can see a red area of segmented by model.   
+> cv::imshow("pred", out);    // if its successful, you can see a red area of segmented by model.   
  cv::waitKey(0);   
  cv::destroyAllWindows();   
  
