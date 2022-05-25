@@ -42,10 +42,10 @@ public:
 	TF_Status* status = TF_NewStatus();
 
 private:
-	std::string m_ModelPath; 
-	std::string m_ModelInputSignature;
-	std::string m_ModelOutputSignature;
-	std::string m_ModelTagName;
+	std::string ModelPath; 
+	std::string ModelInputSignature;
+	std::string ModelOutputSignature;
+	std::string ModelTagName;
 
 	TF_Buffer* run_options = TF_NewBufferFromString("", 0);
 	TF_SessionOptions* session_options = TF_NewSessionOptions();
