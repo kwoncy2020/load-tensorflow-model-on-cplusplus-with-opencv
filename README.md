@@ -61,6 +61,8 @@ you can see like this. in this case, next four arguments are requred.
 
 now you can include files(LoadDeepModel.cpp, LoadDeepModel.h) to your main file.    
 
+\* notice! when you using this LoadDeepModel class, there might be stack-overflow on the stack. because this handle images, you need to expand stack size on your project property.
+
 you can make instance with constructor which requires four args that you already checked.   
 
 // in my case this will be LoadDeepModel LoadDeepModel(R"C:\saved_model\mymodel", "serving_default_input_1", "StatefulPartitionedCall", "serve");   
