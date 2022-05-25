@@ -52,7 +52,7 @@ you can see like this. in this case, next four arguments are requred.
   StatefulPartitionedCall  ( you can see this on the name of outputs['conv2d 10'] tensor_info )   
   serve ( you can see this on tag-sets)   
 
-
+***
 
 now you can include files(LoadDeepModel.cpp, LoadDeepModel.h) to your main file.    
 
