@@ -31,7 +31,9 @@ ex) C:\saved_model_cli show --dir {saved_model_folder\my_model_forder}
 ex) C:\saved_model_cli show --dir {saved_model_folder\my_model_forder} --tag_set serve  
 > ==> return SignatureDef key: "__saved_model_init_op"
                    SignatureDef key: "serving_default"   
+
 ex) C:\saved_model_cli shiw --dir {saved_model_folder\my_model_forder} --tag_set serve --signature_def serving_default 
+
 > ==> return some info. see below.   
 > The given SavedModel SignatureDef contains the following output(s):   
       inputs['input_1'] tensor_info:   
