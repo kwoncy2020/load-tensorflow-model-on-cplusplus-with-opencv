@@ -1,12 +1,12 @@
 # load-tensorflow-model-on-cplusplus-with-opencv   
-load tensorflow model saved from the way of saved_model on python to c++ with opencv    
+load tensorflow model saved from the way of saved_model in python to c++ with opencv    
 
 for someone who look for a way to bring the model made by python-tensorflow to c++. Hopefully, this may help someone who spend tons of time for search the way of use tensorflow-c-api with 2d convolution model under the poor infomations on online. I tested this only on windows 10, c++14, visual studio 2022 in my mfc project.
-if there something goes wrong, but still you can get some insights through my code. cheers!
+if there something goes wrong when you try, but still you can get some insights through my code. cheers!
 ***
-this will use tensorflow-c-api and opencv on c++.   
+this will use tensorflow-c-api and opencv in c++.   
 
-before use this file, you need to install tensorflow, tensorflow-c-api and opencv in your system and you alse need to configure your project by add dll, lib, etc.   
+before use this file, you need to install tensorflow, tensorflow-c-api and opencv in your system and you also need to configure your project by add dll, lib, etc.   
 after finishing settings, include files(LoadDeepModel_tf.cpp, LoadDeepModel_tf.h) to your project.   
 
 ***
@@ -24,7 +24,7 @@ after finishing settings, include files(LoadDeepModel_tf.cpp, LoadDeepModel_tf.h
      * saved_model.pb   
 
 
-if you have a proper model, you need to extract some informations about your model through saved_model_cli.   
+if you have a proper model, you need to extract some informations about your model through saved_model_cli which is kind of command you can run under the command prompt.   
 
 four arguments are required for load saved_model saved by keras api  (the path of saved_model, the input name of signature_def, the output name of signature_def and tag name).   
 
@@ -37,7 +37,7 @@ ex) C:\saved_model_cli show --dir {saved_model_folder\my_model_forder} --tag_set
 > ==> SignatureDef key: "__saved_model_init_op"
                    SignatureDef key: "serving_default"   
 
-ex) C:\saved_model_cli shiw --dir {saved_model_folder\my_model_forder} --tag_set serve --signature_def serving_default 
+ex) C:\saved_model_cli show --dir {saved_model_folder\my_model_forder} --tag_set serve --signature_def serving_default 
 
 > The given SavedModel SignatureDef contains the following output(s):   
       inputs['input_1'] tensor_info:   
@@ -51,7 +51,7 @@ ex) C:\saved_model_cli shiw --dir {saved_model_folder\my_model_forder} --tag_set
   				name: StatefulPartitionedCall:0   
   		Method name is : tensorflow/serving/predict   
  
-you can see like this. in this case, next four arguments are requred.   
+you can see like this. in this case, next four arguments are requred.    
 >  mymodel-forder-path  ( * not the model saved by the way of h5. the folder should contain the model saved by the way of saved_model )    
   serving_default_input_1  ( you can see this on the name of inputs['input 1'] tensor_info )   
   StatefulPartitionedCall  ( you can see this on the name of outputs['conv2d 10'] tensor_info )   
@@ -77,7 +77,7 @@ if (TF_GetCode(LoadDeepModel.status) != TF_OK) return -1;
 
 // now you can prepare an image and put it into .predict() method.
 cv::Mat mat;   
-mat = cv::imread(R"(C:\picture\0.png)", cv::IMREAD_COLOR);   
+mat = cv::imread(R"(C:\picture\0.png)", cv::IMREAD_COLOR);  // the loaded image has already same shape with the model in my case. you might need to resize your loaded image.
  
 cv::Mat mat_gray;
 cv::cvtColor(mat, mat_gray, cv::COLOR_BGR2GRAY);
